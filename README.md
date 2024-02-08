@@ -4,16 +4,20 @@
   -Set items are unordered, unchangeable, and do not allow duplicate values.
   
 ```python
-  #No DUPLICATE!!
+#input
+   #No DUPLICATE!!
   setCountries = {'col', 'mex', 'bol',col}
   print(setCountries)
   print(type(setCountries))
 
   setNumbers = {1,2,3,4,4,,6,7,7,}
   print(setNumbers)
+#Output
+
   ```
 
 -Different Types✅✅
+
 ```python
   setTypes = {11,'hey', False, 23.55}
   print(setTypes)
@@ -50,9 +54,4 @@
 #Output
 
   ```
-```python
-#input
-  
-#Output
 
-  ```
