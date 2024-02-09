@@ -206,4 +206,71 @@ print(numbersV5)
 #Output
 [4, 8, 12, 16, 20]
   ```
+<h3>Diccionaries</h3>
+-Element / for element in iterable if condition
 
+```python
+#input
+dict = {}
+for i in range (1,5):
+  dict[i] = i * 2
+print(dict)
+
+#short way
+dicV2 = {i: i * 2 for i in range(1,5)}
+print(dicV2)
+#Output
+{1: 2, 2: 4, 3: 6, 4: 8}
+{1: 2, 2: 4, 3: 6, 4: 8}
+  ```
+
+Random 
+```python
+#input
+import random 
+countries = ['col', 'mex', 'bol', 'pe']
+population = {}
+for c in countries:
+  population[c] = random.randint(1,100)
+print(population)
+#Output
+{'col': 82, 'mex': 51, 'bol': 98, 'pe': 31}
+  ```
+```python
+#input
+populationV2 = {c: random.randint(1,100) for c in countries}
+#Output
+{'col': 21, 'mex': 26, 'bol': 88, 'pe': 90}
+  ```
+Using ZIP:
+-Iterable objects that will be joined together
+```python
+#input
+names = ['nico', 'zule', 'santi']
+ages = [12, 56, 98]
+
+print(list(zip(names, ages)))
+newDict = {name: age for (name, age) in zip(names, ages)}
+print(newDict)
+
+#Output
+[('nico', 12), ('zule', 56), ('santi', 98)]
+{'nico': 12, 'zule': 56, 'santi': 98}
+  ```
+<h2>Diccionary comprenhention</h2>
+
+```python
+#input
+
+#Output
+  ```
+```python
+#input
+
+#Output
+  ```
+```python
+#input
+
+#Output
+  ```
