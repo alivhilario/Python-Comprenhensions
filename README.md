@@ -59,7 +59,7 @@ Ordering a list as a Set
 
 ```python
 #input
-  setCountries = {'col', 'mex', 'bol',col}
+  setCountries = {'col', 'mex', 'bol','col'}
   size = len(setCountries)
   print(size)
 
@@ -72,11 +72,6 @@ Ordering a list as a Set
   False
   ```
 
-```python
-#input
-#Output
-
-  ```
 -add
 ```python
 #input
