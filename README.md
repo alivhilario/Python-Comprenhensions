@@ -53,6 +53,7 @@ Ordering a list as a Set
   [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
   ```
 <h2>Modifiying "Sets"</h2>
+
 ```python
 #input
   setCountries = {'col', 'mex', 'bol',col}
