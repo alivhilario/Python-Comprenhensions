@@ -160,16 +160,50 @@ symmetric difference
   {'pe', 'col', 'mex'}
   {'pe', 'col', 'mex'}
   ```
+<h3>List Comprehension</h3>
+
+-Normal Way
 ```python
 #input
-  
+numbers = []
+for e in range(1, 11):
+numbers.append(e)
+
+print(numbers)
+
 #Output
+[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+  ```
+-2 lines of code
+```python
+#input
+numbersV2 = [element for element in range (1,11)]
+print(numbersV2)
+#Output
+[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 
   ```
+-Using a list
 ```python
 #input
-  
+numbersV3 = list(range(1,11))
+print(numbersV3)
 #Output
-
+[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+  ```
+-Element / for element in iterable 
+```python
+#input
+numbersV4 = [e * 2 for e in range (1,11)]
+#Output
+[2, 4, 6, 8, 10, 12, 14, 16, 18, 20]
+  ```
+Element / for element in iterable if condition
+```python
+#input
+numbersV5 = [e * 2 for e in range (1,11) if e % 2 == 0]
+print(numbersV5)
+#Output
+[4, 8, 12, 16, 20]
   ```
 
