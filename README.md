@@ -6,13 +6,16 @@
 ```python
 #input
    #No DUPLICATE!!
-  setCountries = {'col', 'mex', 'bol',col}
+  setCountries = {'col', 'mex', 'bol','col'}
   print(setCountries)
   print(type(setCountries))
 
-  setNumbers = {1,2,3,4,4,,6,7,7,}
+  setNumbers = {1,2,3,4,4,6,7,7,}
   print(setNumbers)
 #Output
+  {'col', 'mex', 'bol'}
+  <class 'set'>
+  {1, 2, 3, 4, 6, 7}
 
   ```
 
