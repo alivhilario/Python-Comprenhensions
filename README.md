@@ -281,9 +281,13 @@ print(unique)
 {'e': 'E', 'a': 'A', 'i': 'I', 'o': 'O'}
   ```
 <h3>List vs Tuples vs Sets</h3>
+- Es Fácil de aprender, es un lenguaje que esta en contacto con el idioma ingles
+
 -List can be; ORDERED, CHANGEBLE, ALLOW DUPLICATES values, items has an INDEX. if you add items must be placed at the end of the list.
 -Tuples; can not be MODIFIED.
 -Sets: Can be MODIFIED; remove or add new items, UNORDER; not referred as KEY or INDEX, No DUPLICATES, UNCHANGEABLE.  
+
+## 
 ```python
 #input
 
