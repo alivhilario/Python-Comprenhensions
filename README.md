@@ -286,9 +286,68 @@ print(unique)
 - Tuples; can not be MODIFIED.
 - Sets: Can be MODIFIED; remove or add new items, UNORDER; not referred as KEY or INDEX, No DUPLICATES, UNCHANGEABLE.  
 
-## 
+## Functions
+```python
+#input
+def sum (a,b):
+  print(a + b) 
+sum(4,6)
+ 
+#Output
+10
+  ```
+```python
+#input
+def sum_with_range(min, max):
+  sum = 0
+  for x in range(min, max):
+    sum += x
+  print(sum)
+sum_with_range(1, 100)
+#Output
+4950
+  ```
+##
 ```python
 #input
 
 #Output
   ```
+##
+```python
+#input
+
+#Output
+  ```
+##
+```python
+#input
+
+#Output
+  ```
+##
+```python
+#input
+
+#Output
+  ```
+##
+```python
+#input
+
+#Output
+  ```
+##
+
+```python
+#input
+
+#Output
+  ```
+##
+```python
+#input
+
+#Output
+  ```
+##
