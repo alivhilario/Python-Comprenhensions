@@ -302,22 +302,46 @@ def sum_with_range(min, max):
   sum = 0
   for x in range(min, max):
     sum += x
-  print(sum)
-sum_with_range(1, 100)
+  return sum
+result = sum_with_range(1, 100)
+print(result)
 #Output
 4950
   ```
-##
+##Return ↩️
 ```python
 #input
+def findVolume(lenght=20, width=7, depth=9):
+  return lenght * width * depth, width, 'hey'
 
+result = findVolume(width=5)
+print(result[1])
+result,width, text = findVolume(width=5)
+print(result)
+print(width)
+print(text)
 #Output
+5
+900
+5
+hey
   ```
-##
+##Scope 
 ```python
 #input
-
+price = 100 #GLOBAL
+def increment():
+  price = 400
+  result = price * 100
+  print(price)
+  return(result)
+print(price, ' first')
+increment()
+print(price, ' second')
 #Output
+100  first
+400
+100  second
   ```
 ##
 ```python
