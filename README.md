@@ -515,10 +515,55 @@ print(result)
 6
 12
   ```
-##
+### Map
+```python
+#input
+numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+numbers_v2 = []
+for i in numbers:
+  numbers_v2.append(i * 5)
+print('numbers_v2 => ', numbers_v2)
+
+numbers_v3 = list(map(lambda i: i * 2, numbers))
+print('Version 3 => ',numbers_v3)
+
+#Short way
+numbers_v3 = [i * 2 for i in numbers]
+print('Short way => ',numbers_v3)
+
+#Short way with condition
+numbers_v3 = [i * 2 for i in numbers if i % 2 == 0]
+print('Short way with condition => ',numbers_v3)
+
+#Short way with condition and map
+numbers_v3 = list(map(lambda i: i * 2, numbers))
+print('Short way with condition and map => ',numbers_v3)
+
+#another way to use "Map"
+numbers_1 = [1, 2, 3, 4]
+numbers_2 = [5, 6, 7]
+
+print('numbers_1 => ', numbers_1)
+print('numbers_2 => ', numbers_2)
+result = list(map(lambda x, y: x + y, numbers_1, numbers_2))
+print('result => ', result)
+
+
+#Output
+numbers_v2 =>  [5, 10, 15, 20, 25, 30, 35, 40, 45, 50]
+Version 3 =>  [2, 4, 6, 8, 10, 12, 14, 16, 18, 20]
+Short way =>  [2, 4, 6, 8, 10, 12, 14, 16, 18, 20]
+Short way with condition =>  [4, 8, 12, 16, 20]
+Short way with condition and map =>  [2, 4, 6, 8, 10, 12, 14, 16, 18, 20]
+numbers_1 =>  [1, 2, 3, 4]
+numbers_2 =>  [5, 6, 7]
+result =>  [6, 8, 10]
+
+  ```
+## Map and Dics
 ```python
 #input
 
 #Output
+
   ```
-##
