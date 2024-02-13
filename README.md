@@ -460,18 +460,60 @@ response = message_creator(text)
 print(response)
 def message_creator(text):
   ```
-##
+## Lambda
 ```python
 #input
+def increment(x):
+  return x + 1
+
+result = increment(10)
+print(result)
+
+# lambda function
+incrementV2 = lambda x : x +  1
+result = incrementV2(20)
+print(result)
+# lambda function with 2 parameters
+full_name = lambda name, last_name: f'Full name is {name.title()} {last_name.title()}'
+text = full_name('nicolas', 'perez casas')
+print(text)
 
 #Output
+11
+21
+Full name is Nicolas Perez Casas
+
   ```
-##
+## Higher Order Function
 
 ```python
 #input
+def increment(x):
+  return x + 1
+#replacing the function increment with lambda
+increment_v2 = lambda x : x + 1
+
+
+#replace the function high_ord_func with lambda
+def highOrderFuntion(x, func):
+  return x + func(x)
+result = highOrderFuntion(2, increment)
+print(result)
+
+hof = lambda x, func: x + func(x)
+result = hof(2, increment_v2)
+print(result)
+#There is no need to use the name of the function, because it is already defined
+result = hof(2, lambda x: x + 2)
+print(result)
+result = hof(2, lambda x: x * 5)
+print(result)
 
 #Output
+5
+5
+6
+12
   ```
 ##
 ```python
