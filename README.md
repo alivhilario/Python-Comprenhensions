@@ -308,7 +308,7 @@ print(result)
 #Output
 4950
   ```
-## Return ↩️
+### Return ↩️
 ```python
 #input
 def findVolume(lenght=20, width=7, depth=9):
@@ -326,7 +326,7 @@ print(text)
 5
 hey
   ```
-## Scope 
+### Scope 
 ```python
 #input
 price = 100 #GLOBAL
@@ -343,7 +343,7 @@ print(price, ' second')
 400
 100  second
   ```
-## Game using functions
+### Game using functions
 ```python
 #input
 import random
@@ -426,11 +426,39 @@ def run_game():
 run_game()
 #Output
   ```
-##
+### Small challenge
 ```python
 #input
+def message_creator(text):
+   # Escribe tu solución 👇
 
-#Output
+   respuestas = {'computadora' : "Con mi computadora puedo programar usando Python", 
+                    'celular' : "En mi celular puedo aprender usando la app de Platzi",
+                    'cable' : "¡Hay un cable en mi bota!"}
+
+   if text in respuestas.keys(): 
+      return respuestas[text]
+   else: 
+      return 'Artículo no encontrado'
+
+text = 'computadora'
+response = message_creator(text)
+print(response)
+
+#otherwise
+def message_creator(text):
+  messages = {
+      'computadora': '"Con mi computadora puedo programar usando Python"',
+      'celular': '"En mi celular puedo aprender usando la app de Platzi"',
+      'cable': '"¡Hay un cable en mi bota!"'
+  }
+
+  return messages.get(text, "Artículo no encontrado")
+
+text = 'celular'
+response = message_creator(text)
+print(response)
+def message_creator(text):
   ```
 ##
 ```python
