@@ -308,7 +308,7 @@ print(result)
 #Output
 4950
   ```
-##Return ↩️
+## Return ↩️
 ```python
 #input
 def findVolume(lenght=20, width=7, depth=9):
@@ -326,7 +326,7 @@ print(text)
 5
 hey
   ```
-##Scope 
+## Scope 
 ```python
 #input
 price = 100 #GLOBAL
@@ -343,7 +343,7 @@ print(price, ' second')
 400
 100  second
   ```
-##Game using functions
+## Game using functions
 ```python
 #input
 import random
