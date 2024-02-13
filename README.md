@@ -343,7 +343,7 @@ print(price, ' second')
 400
 100  second
   ```
-##
+##Game using functions
 ```python
 #input
 import random
