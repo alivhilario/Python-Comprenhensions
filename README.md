@@ -786,12 +786,41 @@ print(result)
 #Output
 10
   ```
-
+##Modules
 ```python
 
 #input
+import sys
+print(sys.path)
 
 #Output
+['/home/runner/Python', '/nix/store/icx0zbk2r2qrpnqpd41q4h4xzr856d4f-python3.10-setuptools-67.4.0/lib/python3.10/site-packages', '/nix/store/xf54733x4chbawkh1qvy9i1i4mlscy1c-python3-3.10.11/lib/python3.10', '/home/runner/Python/.pythonlibs/lib/python3.10/site-packages', '/nix/store/s4cbcvnm0miclkjwj6g8fxcn8fgb78s1-python3.10-pip-21.2.dev0/lib/python3.10/site-packages', '/nix/store/xf54733x4chbawkh1qvy9i1i4mlscy1c-python3-3.10.11/lib/python310.zip', '/nix/store/xf54733x4chbawkh1qvy9i1i4mlscy1c-python3-3.10.11/lib/python3.10/lib-dynload', '/nix/store/xf54733x4chbawkh1qvy9i1i4mlscy1c-python3-3.10.11/lib/python3.10/site-packages']
 
+#input
+import re 
+text = 'Mi numero de telefono es 311 123 121, el codigo del pais es 57, mi numero de la suerte es 3'
+result = re.findall('[0-9]+', text)
+print(result)
+
+#output
+['311', '123', '121', '57', '3']
+
+#input
+import time
+timestamp = time.time()
+local = time.localtime()
+result = time.asctime(local)
+print(result)
+
+#output
+Wed Feb 14 15:45:34 2024
+
+#input
+import collections 
+numbers = [1,1,2,1,2,1,4,5,3,3,21]
+counter = collections.Counter(numbers)
+print(counter)
+#Output
+Counter({1: 4, 2: 2, 3: 2, 4: 1, 5: 1, 21: 1})
   ```
 
