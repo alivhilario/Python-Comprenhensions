@@ -563,7 +563,228 @@ result =>  [6, 8, 10]
 ## Map and Dics
 ```python
 #input
+items = [
+  {
+    'product': 'camisa',
+    'price': 100
+  },
+  {
+    'product': 'pantalones',
+    'price': 300
+  },
+  {
+    'product': 'pantalones 2',
+    'price': 200
+  }
+]
+
+#just prices
+prices = list(map(lambda item: item['price'], items))
+print('The normal dic => ',items)
+print(prices)
+#using "List"
+prices = [item['price'] for item in items]
+print('prices => ',prices)
+print('The normal dic => ',items)
+#add tax
+def add_taxes(item):  
+  new_item = item.copy()
+  new_item['taxes'] = new_item['price'] * .19
+  return new_item
+new_items = list(map(add_taxes, items))
+print('new items dic => ', new_items)
+print('Just normal "items! => " ', items)
+
+#Output
+The normal dic =>  [{'product': 'camisa', 'price': 100}, {'product': 'pantalones', 'price': 300}, {'product': 'pantalones 2', 'price': 200}]
+[100, 300, 200]
+prices =>  [100, 300, 200]
+The normal dic =>  [{'product': 'camisa', 'price': 100}, {'product': 'pantalones', 'price': 300}, {'product': 'pantalones 2', 'price': 200}]
+new items dic =>  [{'product': 'camisa', 'price': 100, 'taxes': 19.0}, {'product': 'pantalones', 'price': 300, 'taxes': 57.0}, {'product': 'pantalones 2', 'price': 200, 'taxes': 38.0}]
+Just normal "items! => "  [{'product': 'camisa', 'price': 100}, {'product': 'pantalones', 'price': 300}, {'product': 'pantalones 2', 'price': 200}]
+  ```
+##Maps and inmutability
+```python
+#input
+items = [
+  {
+    'product': 'camisa',
+    'price': 100
+  },
+  {
+    'product': 'pantalones',
+    'price': 300
+  },
+  {
+    'product': 'pantalones 2',
+    'price': 200
+  }
+]
+
+#The dicc has been modified 🚨🚨🚨🚨🚨
+def add_taxes(item):
+  #The error is here cus the dicc is a copy in the memory, so the changes are not reflected in the original dicc
+  new_item = item.copy() #We can use the copy method to avoid this problem
+  new_item['taxes'] = item['price'] * .19
+  return item
+new_items = list(map(add_taxes, items))
+print('new list')
+print(new_items)
+print('old list')
+print(items)
+
+#Output
+new list
+[{'product': 'camisa', 'price': 100}, {'product': 'pantalones', 'price': 300}, {'product': 'pantalones 2', 'price': 200}]
+old list
+[{'product': 'camisa', 'price': 100}, {'product': 'pantalones', 'price': 300}, {'product': 'pantalones 2', 'price': 200}]
+  ```
+
+```python
+
+#input
+items = [
+  {
+    'product': 'camisa',
+    'price': 100,
+  },
+  {
+    'product': 'pantalones',
+    'price': 300
+  },
+  {
+    'product': 'pantalones 2',
+    'price': 200
+  }
+]
+
+def add_taxes(item):
+  new_item = item.copy()
+  new_item['taxes'] = new_item['price'] * .19
+  return new_item
+
+new_items = list(map(add_taxes, items))
+print('New list')
+print(new_items)
+print('Old list')
+print(items
 
 #Output
 
   ```
+### Little challenge
+```python
+
+#input
+def multiply_numbers(numbers):
+  # Escribe tu solución 👇
+  result = list(map(lambda number: number * 2, numbers))
+  return result  
+
+numbers = [1, 2, 3, 4]
+response = multiply_numbers(numbers)
+print(response)
+
+#Remeber you can use List !
+result = [number * 2 for number in numbers]
+#Output
+[2, 4, 6, 8]
+  ```
+###Filter
+```python
+
+#input
+numbers = [1,2,3,4,5,6,7,8,9,10]
+new_numbers = list(filter(lambda x: x % 2 == 0, numbers))
+print(new_numbers)
+print(numbers) 
+
+#Output
+[2, 4, 6, 8, 10]
+[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+  ```
+
+```python
+
+#input
+matches = [
+  {
+    'home_team': 'Bolivia',
+    'away_team': 'Uruguay',
+    'home_team_score': 3,
+    'away_team_score': 1,
+    'home_team_result': 'Win'
+  },
+  {
+    'home_team': 'Brazil',
+    'away_team': 'Mexico',
+    'home_team_score': 1,
+    'away_team_score': 1,
+    'home_team_result': 'Draw'
+  },
+  {
+    'home_team': 'Ecuador',
+    'away_team': 'Venezuela',
+    'home_team_score': 5,
+    'away_team_score': 0,
+    'home_team_result': 'Win'
+  },
+]
+
+print(matches)
+print(len(matches))
+
+new_list = list(filter(lambda item: item['home_team_result'] == 'Win', matches))
+
+print(new_list)
+print(len(new_list))
+print(matches)
+print(len(matches))
+# new_list = list(map(lambda item: item['home_team_result'] == 'Win
+#new_list = [item['home_team]' for item in matches if item['home_team_result'] == 'Win']
+#print(new_list)
+#print(len(new_list))
+
+#Output
+[{'home_team': 'Bolivia', 'away_team': 'Uruguay', 'home_team_score': 3, 'away_team_score': 1, 'home_team_result': 'Win'}, {'home_team': 'Brazil', 'away_team': 'Mexico', 'home_team_score': 1, 'away_team_score': 1, 'home_team_result': 'Draw'}, {'home_team': 'Ecuador', 'away_team': 'Venezuela', 'home_team_score': 5, 'away_team_score': 0, 'home_team_result': 'Win'}]
+3
+[{'home_team': 'Bolivia', 'away_team': 'Uruguay', 'home_team_score': 3, 'away_team_score': 1, 'home_team_result': 'Win'}, {'home_team': 'Ecuador', 'away_team': 'Venezuela', 'home_team_score': 5, 'away_team_score': 0, 'home_team_result': 'Win'}]
+2
+#There is no changes 
+[{'home_team': 'Bolivia', 'away_team': 'Uruguay', 'home_team_score': 3, 'away_team_score': 1, 'home_team_result': 'Win'}, {'home_team': 'Brazil', 'away_team': 'Mexico', 'home_team_score': 1, 'away_team_score': 1, 'home_team_result': 'Draw'}, {'home_team': 'Ecuador', 'away_team': 'Venezuela', 'home_team_score': 5, 'away_team_score': 0, 'home_team_result': 'Win'}]
+3
+
+  ```
+###little challenge
+```python
+
+#input
+def filter_by_length(words):
+   # Escribe tu solución 👇
+   #new_list = list(filter(lambda item: len(item) >= 4, words))
+    new_list = [item for item in words if len(item) >= 4]
+    return new_list
+
+words = ['amor', 'sol', 'piedra', 'día']
+response = filter_by_length(words)
+print(response)
+#Output
+['amor', 'piedra']
+  ```
+##Reduce
+```python
+
+#input
+
+#Output
+
+  ```
+
+```python
+
+#input
+
+#Output
+
+  ```
+
