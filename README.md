@@ -823,4 +823,76 @@ print(counter)
 #Output
 Counter({1: 4, 2: 2, 3: 2, 4: 1, 5: 1, 21: 1})
   ```
+###Own Modules
 
+```python
+#in folder: app two files:
+#In file mod.py
+#input
+def get_population():
+  keys = ['col','bol']
+  values = [300,400]
+  return keys, values
+
+def population_by_country(data, country):
+  result = list(filter(lambda item: item['Country'] == country, data))
+  return result
+-----------------------------
+#Then in file: main.py:
+#input
+import mod 
+
+keys, values = mod.get_population()
+print(keys, values)
+
+data = [
+  {
+    'Country': 'Colombia',
+    'Population': 500
+  },
+  {
+    'Country': 'Bolivia',
+    'Population': 300
+  }
+]
+
+country = input('Type Country => ')
+result = mod.population_by_country(data, country)
+print(result)
+
+#output
+~/Python$ python app/main.py
+['col', 'bol'] [300, 400]
+Type Country => Colombia
+[{'Country': 'Colombia', 'Population': 500}]
+```
+
+```python
+#input
+#output
+```
+
+```python
+#input
+#output
+```
+
+```python
+#input
+#output
+```
+
+```python
+#input
+#output
+```
+
+```python
+#input
+#output
+```
+
+```python
+#input
+#output
+```
