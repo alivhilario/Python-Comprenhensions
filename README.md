@@ -866,10 +866,50 @@ print(result)
 Type Country => Colombia
 [{'Country': 'Colombia', 'Population': 500}]
 ```
+###Running scripts
+Cuando utilizamos name == 'main' estamos dando dualidad a cierta función para que sea ejecutada en dos archivos distintos.
 
+Para ello debemos tener en cuenta que su uso esta catalogado de dos maneras:
+
+Se puede ejecutar el archivo como un script.
+Importando el codding de un archivo a otro archivo python.
+Para Python, es independiente cual de las dos formas estemos utilizando el código, ya que python define una variable especial llamada __name__ la cual contiene un string y cuyo resultado dependerá de la forma en como sea usada.
+
+Como en el ejemplo, se observa que el primer archivo que denominamos main.py.
+
+main.py
 ```python
 #input
-#output
+import utils
+
+keys, values = utils.get_population()
+print(keys, values)
+
+data = [
+  {
+    'country': 'Colombia',
+    'Population': 500
+  },
+  {
+    'country': 'Peru',
+    'Population': 250
+  },
+  {
+    'country': 'Argentina',
+    'Population': 350
+  }
+]
+
+def run():
+  keys, values = utils.get_population()
+  print(keys, values)
+
+  country = input('Digite el país: ')
+  result = utils.population_by_countrie(data, country)
+  print(result)
+
+if __name__ == '__main__':
+  run()
 ```
 
 ```python
