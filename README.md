@@ -1111,26 +1111,98 @@ division by zero
 Hola
 Hola 2
 ```
+### Little challenge
+```python
+#input
+def my_divide(a, b):
+  # Escribe tu solución 👇
+  try:
+    result = a / b
+  except ZeroDivisionError as error:
+    result = 'No se puede dividir por 0'
+  return result
+
+response = my_divide(10, 2)
+print(response) # 5
+
+response = my_divide(10, 0)
+print(response) # No se puede dividir por 0
+
+#output
+5.0
+No se puede dividir por 0
+```
+## Reading files
+```python
+file = open('./text.txt')
+print('just file => ', file.read())
+
+#print(file.readline())
+#print(file.readline())
+
+#reading a file with a for loop
+for line in file:
+  print('With a loop => ',line)
+
+file.close()
+
+#There is no need to close the file, it will be closed automatically when the context ends
+with open('./text.txt') as file:
+  print('With open => ',file.read())
+
+#output
+just file =>  line 1
+line 2
+line 3
+With open =>  line 1
+line 2
+line 3
+```
+### Writing text in python
+
+-Para poder escribir texto en python solo debemos agregar al parámetro open( ) algunas de las siguientes reglas:
+
+Exception	Description
+"a"	Agregar: se agregar texto al final del texto.
+"w"	Escribir: Sobre escribir cualquier contenido existente en el archivo texto.
+Sintaxis.
+Su sintaxis es un simple y fácil de usar, solo es necesario especificar el tipo de parámetro que queremos agregar a nuestro texto.
+```python
+#input
+f = open('./text.txt') o file = open('./text.txt')
+f = open('./text.txt', "a")
+f.write("nueva linea de texto1\n")
+f.write("nueva linea de texto2\n")
+f.write("nueva linea de texto3\n")
+
+#output
+_Producción:_
+nueva linea de texto1
+nueva linea de texto2
+nueva linea de texto3
+```
+Ahora y quizas este comando puede ser muy util como muy peligro ya que "w" lo que realiza es eliminar todo el texto y lo sobre escribir con lo que le vayamos a ingresar por eso es de cuidado!.
 
 ```python
 #input
-#output
-```
+f = open('./text.txt', "w")
+f.write("Uppps!! hemos sobre escrito el texto con este nuevo\n")
+f.close()
 
-```python
-#input
 #output
+_Producción:_
+Uppps!! hemos sobre escrito el texto con este nuevo
 ```
+Gracias a Python existen mas comandos que podemos utilizar con la función open( ) las cuales explicare a continuación:
 
-```python
-#input
-#output
-```
+Exception	Description
+"r"	Lectura: Abre por defecto un archivo para su lectura, genera error si este no existe.
+"a"	Agregar: se agregar texto al final del texto.
+"w"	Escribir: Sobre escribir cualquier contenido existente en el archivo texto.
+"x"	Crear: Crea un archivo en especifico, devuelve un error si este no es valido.
+"t"	texto: Valor por defecto, devuelve el resultado como tipo texto.
+"b"	Binario: Devuelve el valor de tipo binario (por ejemplo imágenes)
 
-```python
-#input
-#output
-```
 
 ```python
 #input
