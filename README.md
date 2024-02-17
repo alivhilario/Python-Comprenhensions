@@ -1211,59 +1211,105 @@ Importar la biblioteca csv:
 import csv
 ```
 Definir una función read_csv:
-```python
-#input
-#output
-```
 
+Se define una función llamada read_csv que toma como argumento ruta_file, que es la ruta al archivo CSV que se va a leer.
 ```python
 #input
-#output
+def read_csv(ruta_file):
 ```
+Abrir el archivo CSV en modo lectura:
 
+Se abre el archivo CSV especificado en modo lectura ('r') utilizando la función open. La declaración with se utiliza para garantizar que el archivo se cierre correctamente después de su uso.
 ```python
 #input
-#output
+with open(ruta_file, mode='r') as csvfile:
 ```
+Crear un lector CSV:
 
+Se crea un lector CSV utilizando la función csv.reader. El argumento delimiter=',' especifica que las columnas en el archivo CSV están separadas por comas.
 ```python
 #input
-#output
+lector_csv = csv.reader(csvfile, delimiter=',')
 ```
-
+Inicializar una lista data:
 ```python
 #input
-#output
+data = []
 ```
+Leer la primera fila como claves:
 
+Se utiliza next(lector_csv) para leer la primera fila del archivo CSV, que generalmente contiene las claves o nombres de las columnas. Estas claves se almacenan en la variable claves.
 ```python
 #input
-#output
+claves = next(lector_csv)
 ```
+Iterar a través de las filas del archivo:
 
+Se inicia un bucle for que itera a través de las filas del archivo CSV después de la primera fila.
 ```python
 #input
-#output
+for fila in lector_csv:
 ```
+Crear un diccionario para cada fila:
 
+Para cada fila, se crea un diccionario utilizando las claves (nombres de columnas) de la primera fila y los valores de la fila actual. Esto se hace utilizando la función zip para combinar las claves y los valores en pares, y luego se utiliza una comprensión de diccionario para crear el diccionario country_dict.
 ```python
 #input
-#output
+iterable = zip(claves, fila)
+country_dict = {key: value for key, value in  iterable}
 ```
-
+Agregar el diccionario a la lista de datos:
 ```python
 #input
-#output
+data.append(country_dict)
 ```
-
+Devolver la lista de datos:
 ```python
 #input
-#output
+return data
 ```
+Llamada a la función desde el bloque principal:
 
+El código en este bloque principal verifica si el script se está ejecutando como un programa independiente (if __name__ == '__main__':). Luego, llama a la función read_csv con la ruta del archivo CSV "data.csv" y muestra la primera fila de datos en la lista resultante.
 ```python
 #input
+if __name__ == '__main__':
+    resultado = read_csv('./data.csv')
+    print(resultado[0])
+```
+Anpther way
+```python
+#input
+
+
+#another way
+import csv
+
+# funcion abrir archivo
+def read_csv(path):
+  with open(path, 'r') as csvfile:
+    reader = csv.reader(csvfile, delimiter=',')
+
+    #nombre de las columnas se encuentra en la primera fila
+    header = next(reader)
+
+    data = []
+    for row in reader:
+      iterable = list(zip(header, row))
+      # une los valores de la listas en tuplas
+      country_dict = country_dict = dict(iterable)
+      data.append(country_dict)
+      #print(country_dict)      
+
+    return data
+
+# correr archivo como script desde la terminal
+if __name__ == '__main__':
+  data = read_csv('./app/data.csv')
+  print(data[0])
+
 #output
+{'Rank': '36', 'CCA3': 'AFG', 'Country/Territory': 'Afghanistan', 'Capital': 'Kabul', 'Continent': 'Asia', '2022 Population': '41128771', '2020 Population': '38972230', '2015 Population': '33753499', '2010 Population': '28189672', '2000 Population': '19542982', '1990 Population': '10694796', '1980 Population': '12486631', '1970 Population': '10752971', 'Area (km²)': '652230', 'Density (per km²)': '63.0587', 'Growth Rate': '1.0257', 'World Population Percentage': '0.52'}
 ```
 
 ```python
