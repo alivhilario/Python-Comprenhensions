@@ -1279,10 +1279,6 @@ if __name__ == '__main__':
 ```
 Anpther way
 ```python
-#input
-
-
-#another way
 import csv
 
 # funcion abrir archivo
@@ -1311,15 +1307,65 @@ if __name__ == '__main__':
 #output
 {'Rank': '36', 'CCA3': 'AFG', 'Country/Territory': 'Afghanistan', 'Capital': 'Kabul', 'Continent': 'Asia', '2022 Population': '41128771', '2020 Population': '38972230', '2015 Population': '33753499', '2010 Population': '28189672', '2000 Population': '19542982', '1990 Population': '10694796', '1980 Population': '12486631', '1970 Population': '10752971', 'Area (km²)': '652230', 'Density (per km²)': '63.0587', 'Growth Rate': '1.0257', 'World Population Percentage': '0.52'}
 ```
-
+### Little Challenge
 ```python
+#data.csv
 #input
+Administration,200
+Marketing,201
+Purchasing,114
+Human Resources,203
+Shipping,121
+IT,103
+Public Relations,204
+Sales,145
+Executive,100
+Finance,108
+
+#main.py
+#input
+import csv
+
+def read_csv(path):
+   # Tu código aquí 👇
+   with open(path, 'r') as csvfile:      
+      total = sum(int(r[1]) for r in csv.reader(csvfile))
+      return total
+
+   response = read_csv('./data.csv')
+   print(response)
+   total = 0
+   return total
+
+response = read_csv('./data.csv')
+print(response)
+
 #output
+1449
 ```
-
+## Charts
 ```python
 #input
+import matplotlib.pyplot as plt
+
+def generate_bar_chart(labels, values):
+  fig, ax = plt.subplots()
+  ax.bar(labels, values)
+  plt.show()
+
+def generate_pie_chart(labels, values):
+  fig, ax = plt.subplots()
+  ax.pie(values, labels=labels)
+  ax.axis('equal')
+  plt.show()
+
+if __name__ == '__main__':
+  labels = ['a', 'b', 'c']
+  values = [10, 40, 800]
+  # generate_bar_chart(labels, values)
+  generate_pie_chart(labels, values
 #output
+pie chart & chart
 ```
 
 ```python
