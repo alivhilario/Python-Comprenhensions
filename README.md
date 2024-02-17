@@ -866,7 +866,7 @@ print(result)
 Type Country => Colombia
 [{'Country': 'Colombia', 'Population': 500}]
 ```
-###Running scripts
+### Running scripts
 Cuando utilizamos name == 'main' estamos dando dualidad a cierta función para que sea ejecutada en dos archivos distintos.
 
 Para ello debemos tener en cuenta que su uso esta catalogado de dos maneras:
@@ -911,10 +911,205 @@ def run():
 if __name__ == '__main__':
   run()
 ```
+Cuando ejecutamos el archivo directamente como un script nuestra variable if __name__  tomara el valor de __main__
+
+Al ser ejecutado nuestro output será el siguiente:
+
+Producción:
+```python
+#output
+Digite el país: Peru
+[{'country': 'Peru', 'Population': 250}]
+```
+Con esto podemos concluir que la función __name__ == '__main__' ayuda a que python identifique de que manera se debe ejecutar e o los módulos ó scrip
+-------------------------------------------------------------------------------------------------------------
+
+
+
+### Packages
+
+Un paquete en Python es una carpeta que contiene varios módulos.
+
+Para ello debe tener siempre un archivo de nombre __init__.py (por lo general esta vacio, ya que así es compatible con programas python versiones anteriores a la 3), con esto le estamos indicado a python que esto se trata de un paquete y no de una carpeta.
+
+Namespace
+Un namespace es un sistema que tiene un nombre único para cada objeto en Python.
+
+Es posible habilitar un namespace a través del archivo __init__.py si los módulos de dicho paquete se importan en el mismo:
+
+-Archivo __init__.py
+```python
+import pkg.mod_1
+```
+-Archivo mod_1.py
+```python
+def func_1():
+  return 'func 1'
+  
+def func_2():
+  return 'func 2'
+```
+Respuesta sin __init__.py
+```python
+import pkg
+
+print(pkg.mod_1.func_1()) # AttributeError: module 'pkg' has no attribute 'mod_1'
+```
+Respuesta con __init__.py
+```python
+import pkg
+
+print(pkg.mod_1.func_1()) # func 1
+```
+### Little challenge
+```python
+#my_functions.py
+#input
+def get_totals(orders):
+   return [order['total'] for order in orders]
+
+def calc_total(totals):
+   return sum(totals)
+```
+main.py
+```python
+#input
+import my_functions
+
+def get_total(orders):
+  ordenes = my_functions.get_totals(orders)
+
+  
+  suma_ordenes = my_functions.calc_total(ordenes)
+  
+  return suma_ordenes
+
+orders = [
+  {
+    "customer_name": "Nicolas",
+    "total": 100,
+    "delivered": True,
+  },
+  {
+    "customer_name": "Zulema",
+    "total": 120,
+    "delivered": False,
+  },
+  {
+    "customer_name": "Santiago",
+    "total": 20,
+    "delivered": False,
+  }
+]
+
+total = get_total(orders)
+print(total)
+#output
+240
+```
+Another way
+```python
+#input
+def get_totaal(orders):
+  from my functions import get_totals, calc_total
+  result = calc_total(get_totals(orders))
+return result
+orders = [
+  {
+    "customer_name": "Nicolas",
+    "total": 100,
+    "delivered": True,
+  },
+  {
+    "customer_name": "Zulema",
+    "total": 120,
+    "delivered": False,
+  },
+  {
+    "customer_name": "Santiago",
+    "total": 20,
+    "delivered": False,
+  }
+]
+
+total = get_total(orders)
+print(total)
+#output
+```
+### Iterables
+```python
+#input
+for i in range (1, 11):
+  print(i)  
+
+my_iter = iter(range(1, 10))
+print(my_iter)
+print(next(my_iter))
+print(next(my_iter))
+print(next(my_iter))
+
+#output
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+<range_iterator object at 0x7f61cae83f90>
+1
+2
+3
+```
+### Errors in Python
+
+-assert() hace una verificacion y manda un AssertionError cuando no se cumple el “statement”
+
+-raise Exception() levanta un error creado por nosotros mismo
+```python
+#input
+# print(0 / 0)
+# print(result)
+print('Hola')
+
+suma = lambda x,y: x + y
+assert suma(2,2) == 4
+
+print('Hola 2')
+
+age = 10
+if age < 18:
+  raise Exception('No se permiten menores de edad')
+
+print('Hola 2')
+```
+Manage Errors in Python 🚨🚨
 
 ```python
 #input
+try:
+  print(0 / 0)
+  assert 1 != 1, 'Uno no es igual que uno'
+  age = 10
+  if age < 18:
+    raise Exception('No se permiten menores de edad')
+except ZeroDivisionError as error:
+  print(error)
+except AssertionError as error:
+  print(error)
+except Exception as error:
+  print(error)
+
+print('Hola')
+print('Hola 2')
+
 #output
+division by zero
+Hola
+Hola 2
 ```
 
 ```python
@@ -936,3 +1131,14 @@ if __name__ == '__main__':
 #input
 #output
 ```
+
+```python
+#input
+#output
+```
+
+```python
+#input
+#output
+```
+
